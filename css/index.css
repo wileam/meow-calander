@@ -1,0 +1,89 @@
+.calendar-container {
+  border: 2px solid black;
+  display: block;
+  width: 390px;
+  height: 575px;
+  font-size: 14px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.cal-header {
+  height: 38px;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.cal-month-week {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.cal-month-zh,
+.cal-month-en,
+.cal-week {
+  flex: 1;
+}
+
+.cal-month-zh {
+  padding-right: 20px;
+  writing-mode: vertical-rl;
+}
+
+.cal-month-en {
+  font-size: 30px;
+  text-align: center;
+}
+
+.cal-week {
+  padding-left: 20px;
+  writing-mode: vertical-lr;
+}
+
+.cal-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 200px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.cal-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.cal-footer {
+  border-top: 1px solid black;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+}
+
+.cal-sentence {
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.cal-author {
+  font-size: 10px;
+  float: left;
+}
+
+.cal-logo {
+  float: right;
+  font-size: 12px;
+}
