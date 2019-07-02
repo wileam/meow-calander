@@ -87,3 +87,9 @@
   float: right;
   font-size: 12px;
 }
+
+@media (max-width: 480px) {
+  .calendar-container {
+    width: 100%;
+  }
+}
