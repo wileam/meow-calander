@@ -18,9 +18,9 @@ const myCalendar = {
   week: "周一",
   day: 1,
   title: "忌大而无当",
-  sentence:
+  quote:
     "如果我还有什么剩下要做的事情，那就是一棵草的事情，一粒虫的事情，一片云的事情。",
-  author: "作家，刘亮程 《一个人的村庄》",
+  from: "作家，刘亮程 《一个人的村庄》",
   logo: "喵喵日历"
 };
 
@@ -48,12 +48,12 @@ const tpl = `
     </div>
 </div>
 <div id="footer" class="cal-footer">
-    <div id="sentence" class="cal-sentence">
-        {{sentence}}
+    <div id="quote" class="cal-quote">
+        {{quote}}
     </div>
     <div>
-    <div id="author" class="cal-author">
-        {{author}}
+    <div id="from" class="cal-from">
+        {{from}}
     </div>
     <div id="logo" class="cal-logo">{{logo}}</div>
     </div>
