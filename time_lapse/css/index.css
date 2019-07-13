@@ -1,0 +1,79 @@
+:root {
+  --font-sans: Arial, "Hiragino Sans GB", "Microsoft Yahei", "微软雅黑",
+    sans-serif;
+  --font-serif: Georgia, "Times New Roman", Times, "SimSun", "宋体", serif;
+}
+
+body {
+  font-size: 14px;
+}
+
+.calendar-container {
+  display: block;
+  margin: 1.5rem;
+  padding: 3rem;
+  position: relative;
+  font-family: var(--font-serif);
+  border: 5px #EEE5BF solid;
+}
+
+.cal-header {
+  font-size: 3rem;
+  font-family: var(--font-sans);
+  margin-bottom: 3.5rem;
+  text-transform: uppercase;
+  width: 35.7rem;
+}
+
+.cal-body {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.cal-month, .cal-day {
+  margin: 0.7rem;
+  padding: 0.3rem;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.cal-month {
+  font-weight: bold;
+}
+
+.past {
+  border-radius: 100%;
+  background: black;
+}
+
+.cal-footer {
+  margin-right: 1.4rem;
+  text-align: right;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 10px;
+  }
+  .calendar-container {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .cal-header {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .cal-month, .cal-day {
+    margin: 5px;
+    padding: 3px;
+  }
+}
