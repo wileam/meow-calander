@@ -22,7 +22,6 @@ body {
   font-family: var(--font-sans);
   margin-bottom: 3.5rem;
   text-transform: uppercase;
-  width: 35.7rem;
 }
 
 .cal-body {
@@ -32,6 +31,7 @@ body {
 }
 
 .cal-month, .cal-day {
+  font-family: var(--font-sans);
   margin: 0.7rem;
   padding: 0.3rem;
   width: 1rem;
@@ -54,7 +54,7 @@ body {
 .cal-footer {
   margin-right: 1.4rem;
   text-align: right;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 480px) {

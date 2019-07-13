@@ -3,7 +3,7 @@
 ## Dev
 
 ```shell
-npm i @fibjs/static
+npm i @fibjs/static -g
 ```
 
 ```shell
