@@ -10,26 +10,29 @@ function template(tpl, option = {}) {
     return tpl;
   }
 }
-function daysInMonth (month, year) {
-  return new Date(year, month, -1).getDate();
+function daysInMonth(month, year) {
+  return new Date(year, month + 1, 0).getDate();
 }
 
 function formatMonth(month, text, hideMonth = false) {
-  let className = 'cal-month';
+  let className = "cal-month";
   if (hideMonth && new Date().getMonth() > month) {
-    className += ' past';
+    className += " past";
   }
-  return `<div class="${className}">${text}</div>`
+  return `<div class="${className}">${text}</div>`;
 }
 function formatDay(month, day) {
-  let className = 'cal-day';
+  let className = "cal-day";
   let today = new Date();
-  if (today.getMonth() > month || today.getMonth() === month && today.getDate() > day) {
-    className += ' past';
+  if (
+    today.getMonth() > month ||
+    (today.getMonth() === month && today.getDate() > day)
+  ) {
+    className += " past";
   }
-  return `<div class="${className}">${day}</div>`
+  return `<div class="${className}">${day}</div>`;
 }
-const MONTHS = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D']
+const MONTHS = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 
 function getContent(year) {
   var ret = [];
@@ -37,13 +40,13 @@ function getContent(year) {
     ret.push(formatMonth(i, MONTHS[i]));
     const days = daysInMonth(i, year);
     for (let j = 0; j < days; j++) {
-      ret.push(formatDay(i, j+1))      
+      ret.push(formatDay(i, j + 1));
     }
   }
   return ret;
 }
 function init() {
   const container = document.getElementById("body");
-  const content = getContent(2019).join('');
+  const content = getContent(2019).join("");
   container.innerHTML = content;
 }
