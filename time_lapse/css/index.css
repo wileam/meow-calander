@@ -14,7 +14,7 @@ body {
   padding: 3rem;
   position: relative;
   font-family: var(--font-serif);
-  border: 5px #EEE5BF solid;
+  border: 5px #eee5bf solid;
 }
 
 .cal-header {
@@ -30,7 +30,8 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.cal-month, .cal-day {
+.cal-month,
+.cal-day {
   font-family: var(--font-sans);
   margin: 0.7rem;
   padding: 0.3rem;
@@ -57,6 +58,32 @@ body {
   font-size: 0.8rem;
 }
 
+.today {
+  position: relative;
+  background-color: #fff;
+}
+.today:after {
+  border: 0.25em solid red;
+  border-top: none;
+  border-radius: 1.5em 1em 2em 1.5em;
+  bottom: -0.3em;
+  content: "";
+  left: -0.3em;
+  position: absolute;
+  right: -0.3em;
+  top: -0.1em;
+}
+.today:before {
+  border-radius: 0.5em;
+  content: "";
+  height: 1em;
+  left: 0;
+  position: absolute;
+  top: -0.3em;
+  transform: rotate(-10deg);
+  width: 2em;
+}
+
 @media (max-width: 480px) {
   html {
     font-size: 10px;
@@ -72,7 +99,8 @@ body {
     margin-bottom: 20px;
   }
 
-  .cal-month, .cal-day {
+  .cal-month,
+  .cal-day {
     margin: 5px;
     padding: 3px;
   }

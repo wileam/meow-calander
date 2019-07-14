@@ -29,6 +29,8 @@ function formatDay(month, day) {
     (today.getMonth() === month && today.getDate() > day)
   ) {
     className += " past";
+  } else if (today.getMonth() === month && today.getDate() === day) {
+    className += " today";
   }
   return `<div class="${className}">${day}</div>`;
 }
