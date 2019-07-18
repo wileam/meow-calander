@@ -1,26 +1,35 @@
 :root {
   --font-sans: Arial, "Hiragino Sans GB", "Microsoft Yahei", "微软雅黑",
     sans-serif;
-  --font-serif: Georgia, "Times New Roman", Times, "SimSun", "宋体", serif;
+  --font-serif: "Roboto", Georgia, "Times New Roman", Times, "SimSun", "宋体",
+    serif;
 }
 
 body {
   font-size: 14px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .calendar-container {
-  display: block;
-  margin: 1.5rem;
-  padding: 3rem;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1rem 0.5rem 1rem 1.5rem;
+  width: 100vw;
   position: relative;
   font-family: var(--font-serif);
-  border: 5px #eee5bf solid;
 }
 
 .cal-header {
+  flex: 1 100%;
   font-size: 3rem;
-  font-family: var(--font-sans);
-  margin-bottom: 3.5rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 0.7rem;
   text-transform: uppercase;
 }
 
@@ -32,15 +41,15 @@ body {
 
 .cal-month,
 .cal-day {
-  font-family: var(--font-sans);
-  margin: 0.7rem;
+  font-family: var(--font-serif);
+  margin: 0.5rem;
   padding: 0.3rem;
-  width: 1rem;
-  height: 1rem;
+  width: 1.4rem;
+  height: 1.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .cal-month {
@@ -54,8 +63,9 @@ body {
 
 .cal-footer {
   margin-right: 1.4rem;
-  text-align: right;
   font-size: 0.8rem;
+  flex: 1 100%;
+  text-align: right;
 }
 
 .today {
