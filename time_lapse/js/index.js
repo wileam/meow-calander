@@ -1,54 +1,53 @@
 window.onload = init;
 
-function template(tpl, option = {}) {
-  if (tpl && typeof tpl === "string") {
-    const regx = /{{([a-zA-Z\-]+)}}/g;
-    return tpl.replace(regx, (...argv) => {
-      return option[argv[1]];
-    });
-  } else {
-    return tpl;
-  }
-}
 function daysInMonth(month, year) {
   return new Date(year, month + 1, 0).getDate();
 }
 
-function formatMonth(month, text, hideMonth = false) {
+function formatMonth(month, text, date, hideMonth = false) {
   let className = "cal-month";
-  if (hideMonth && new Date().getMonth() > month) {
+  if (hideMonth && date.getMonth() > month) {
     className += " past";
   }
   return `<div class="${className}">${text}</div>`;
 }
-function formatDay(month, day) {
+
+function formatDay(month, day, date) {
   let className = "cal-day";
-  let today = new Date();
   if (
-    today.getMonth() > month ||
-    (today.getMonth() === month && today.getDate() > day)
+    date.getMonth() > month ||
+    (date.getMonth() === month && date.getDate() > day)
   ) {
     className += " past";
-  } else if (today.getMonth() === month && today.getDate() === day) {
+  } else if (date.getMonth() === month && date.getDate() === day) {
     className += " today";
   }
   return `<div class="${className}">${day}</div>`;
 }
+
 const MONTHS = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 
-function getContent(year) {
+function getContent(date) {
   var ret = [];
   for (let i = 0; i < 12; i++) {
-    ret.push(formatMonth(i, MONTHS[i]));
-    const days = daysInMonth(i, year);
-    for (let j = 0; j < days; j++) {
-      ret.push(formatDay(i, j + 1));
+    ret.push(formatMonth(i, MONTHS[i], date));
+    const days = daysInMonth(i, date.getFullYear());
+    for (let j = 1; j < days; j++) {
+      ret.push(formatDay(i, j + 1, date));
     }
   }
   return ret;
 }
+
 function init() {
+  const date = window.mockDate || new Date();
   const container = document.getElementById("body");
-  const content = getContent(2019).join("");
+  const content = getContent(date).join("");
   container.innerHTML = content;
+}
+
+// Using refresh('04/04/2024') to test.
+function refresh(time) {
+  window.mockDate = new Date(time);
+  init();
 }
